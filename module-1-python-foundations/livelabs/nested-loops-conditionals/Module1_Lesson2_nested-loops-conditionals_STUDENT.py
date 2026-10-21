@@ -39,7 +39,10 @@ print('----- 1. Nested Loop, Live -----')
 #                         outside and range(2) on the inside. How many lines
 #                         print?
 # Your answer:
-#
+for row in range(2):
+    for col in range(3):
+        print(row,col)
+
 #
 #
 # DISCUSS: With range(3) outside and range(2) inside, a classmate's version

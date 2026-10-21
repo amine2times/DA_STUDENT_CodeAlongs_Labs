@@ -44,17 +44,17 @@ SUBMIT
 
 # 1. What does one row represent?
 # Your answer:
-#
+# One row repersents a member, class name, and sessions 
 #
 
 # 2. Which fields hold numbers, and which hold text?
 # Your answer:
-#
+# The first two fields hold text, and the last field holds a number.
 #
 
 # 3. What already looks wrong, missing or inconsistent?
 # Your answer:
-#
+# There are inconsitencies on the amount of data per name.
 #
 
 ############################################################################
@@ -78,17 +78,28 @@ SUBMIT
 # The arithmetic is the same arithmetic a plain loop would do. What changes
 # is that the answer comes back to you instead of going to the screen.
 
-with open("data/rec_center_signups.txt") as f:
+with open("/Users/amineamine/Documents/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/data/rec_center_signups.txt") as f:
     signups = [line for line in f.read().splitlines()
                if line and not line.startswith("#")]
 
+
 def total_sessions(records):
     # TODO: add up the sessions column across every record in `records`
+    total = 0
+    for record in records:
+        total = total + int(record.split(",")[2])
+    return total
+        
     # TODO: hand the total back to whoever called this. Do not print it.
     pass
-
 swim_only = []
 # TODO: fill swim_only with just the Swim records
+for record in signups:
+    if record.split(",")[1] == "Swim":
+        swim_only.append(record)
+
+
+
 
 print("every class:", total_sessions(signups))
 print("swim only:  ", total_sessions(swim_only))
@@ -115,11 +126,17 @@ print("swim only:  ", total_sessions(swim_only))
 
 def count_long_bookings(records, minimum):
     # TODO: count the records whose sessions number is `minimum` or more
+    count = 0
+    for record in records:
+        if int(record.split(",")[2]) >= minimum:
+            count = count + 1
     # TODO: return the count
+    return count
     pass
 
 def show_long_bookings(records, minimum):
     # TODO: print a sentence with the same count in it. Only print.
+    print()
     pass
 
 print("returned:", count_long_bookings(signups, 4))
@@ -228,6 +245,7 @@ last_member = "nobody yet"
 last_seen = "nobody yet"
 
 def log_signup_broken(record):
+    global last_seen
     # Leave this body exactly as written. It is supposed to raise.
     print("previous:", last_seen)
     last_seen = record.split(",")[0]

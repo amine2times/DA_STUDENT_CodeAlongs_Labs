@@ -28,7 +28,10 @@ fill it in before you run the file again.
 print('----- 1. Define and Call, Live -----')
 # TODO: define a function named greet that prints a welcome
 # message, then call it twice
-
+def greet():
+    print("welcome")
+greet()
+greet()
 
 # ===== 2. Parameters, Live =====
 # Make greet work for anyone: pass in a name and print a personal welcome for
@@ -36,6 +39,9 @@ print('----- 1. Define and Call, Live -----')
 print('----- 2. Parameters, Live -----')
 # TODO: add a name parameter to greet, and print a
 # personalized welcome message for each of 2 names
+def greet(name):
+    print("welcome " + name)
+greet("amine")
 
 # DISCUSS: The code is def double(n): print(n * 2), then double(5). Put the
 #          steps of that call in order. A: n becomes 5. B: the body runs. C:
@@ -62,5 +68,10 @@ print('----- 3. Return, Live -----')
 #          TypeError. Using what you just saw in the Return, Live code, what's
 #          the most likely cause?
 # Your answer:
-#
+def double(n):
+    return n*2
+
+result = double(7)
+print(result+1)
+
 #

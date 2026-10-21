@@ -28,7 +28,16 @@ fill it in before you run the file again.
 print('----- 1. If/Elif/Else, Live -----')
 # TODO: set temperature to any number, then write the
 # if/elif/else check yourself before revealing the answer
+# >71 too hot, <71 mucho frio, = just right?
 temperature = 71
+if temperature > 71: 
+    print("Too Hot!")
+elif temperature < 71:
+    print("Mucho Frio!")
+else:
+    print("Just right")
+
+
 
 
 # ===== 2. For Loop, Live =====
@@ -36,6 +45,8 @@ temperature = 71
 print('----- 2. For Loop, Live -----')
 # TODO: write a for loop that prints every value in scores
 scores = [88, 92, 75, 100]
+for score in scores:
+    print(score)
 
 
 # ===== 3. range() Generates Numbers to Loop Over =====
@@ -43,7 +54,8 @@ scores = [88, 92, 75, 100]
 # before 5.
 print('----- 3. range() Generates Numbers to Loop Over -----')
 # TODO: use range() to print the numbers 0 through 4
-
+for number in range(5):
+    print(number)
 # PREDICT before you run: Change range(5) to range(3). What does the loop print
 #                         now?
 # Your answer:
@@ -65,10 +77,15 @@ print('----- 4. While Loop, Live -----')
 # TODO: write a while loop that prints 0, 1, 2, 3 -
 # think carefully about the condition
 count = 0
+while count <= 3:
+    print(count)
+    count += 1
+    
+
 
 # PREDICT before you run: In the While Loop, Live code above, change count <= 3
 #                         to count < 3. How many numbers print?
-# Your answer:
+# Your answer: I predected that it would count 0, 1, 2. Then realized that <= means less than OR equal to so it would count 3.
 #
 #
 
@@ -80,3 +97,8 @@ print('----- 5. Loop and Conditional, Together -----')
 # TODO: loop over scores; for each one, print "great job"
 # if it's 90 or above, otherwise print "keep practicing"
 scores = [88, 92, 75, 100]
+for score in scores:
+    if score >= 90:
+        print(score, " - great job")
+    else:
+        print(score, " - Do better")
