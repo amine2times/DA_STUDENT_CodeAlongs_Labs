@@ -228,7 +228,7 @@ print("buggy loop visited: ", buggy_seen)
 print("fixed loop visited: ", fixed_seen)
 # TODO: print the one row the buggy loop never reached. Reach into the
 #       list by position; do not retype the row by hand.
-print("the row it never saw:", shifts[-1])
+print("the row it never saw:", shifts)
 
 # ----- Share Out: Day 2 -----
 # Last 15 minutes, back together as a class. Bring:
