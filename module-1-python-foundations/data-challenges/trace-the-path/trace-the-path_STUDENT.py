@@ -45,15 +45,15 @@ SUBMIT
 # 1. What does one row represent?
 # Your answer: One row repersents a set of data for a person
 # 
-#
+# It repersents a person, the day, and the hours.
 
 # 2. Which fields hold numbers, and which hold text?
-# Your answer: 
+# Your answer: First two hold text and last holds numbers.
 #
 #
 
 # 3. What already looks wrong, missing or inconsistent?
-# Your answer:
+# Your answer: There are more data points for different days.
 #
 #
 
@@ -228,7 +228,7 @@ print("buggy loop visited: ", buggy_seen)
 print("fixed loop visited: ", fixed_seen)
 # TODO: print the one row the buggy loop never reached. Reach into the
 #       list by position; do not retype the row by hand.
-print("the row it never saw:", shifts)
+print("the row it never saw:", shifts[-1])
 
 # ----- Share Out: Day 2 -----
 # Last 15 minutes, back together as a class. Bring:
