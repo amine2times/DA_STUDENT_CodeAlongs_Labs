@@ -136,7 +136,9 @@ def count_long_bookings(records, minimum):
 
 def show_long_bookings(records, minimum):
     # TODO: print a sentence with the same count in it. Only print.
-    print()
+    c = count_long_bookings(records, minimum)
+    print(c, 'booked sessions have', minimum, 'or more sessions')
+    
     pass
 
 print("returned:", count_long_bookings(signups, 4))
@@ -197,6 +199,12 @@ sessions_cutoff = 4
 def count_reaching_outside(records):
     # TODO: same count as count_long_bookings, but take NO minimum
     # parameter. Read sessions_cutoff from outside the function instead.
+    count = 0
+    for record in records:
+            if int(record.split(",")[2]) >= sessions_cutoff:
+                count = count + 1
+    return(count)
+    
     pass
 
 print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
@@ -204,8 +212,10 @@ print("cutoff", sessions_cutoff, "gives", count_reaching_outside(signups))
 sessions_cutoff = 2
 
 # TODO: call count_reaching_outside(signups) again, unchanged, and print it
-# TODO: print count_long_bookings(signups, 4) underneath for comparison
+print(count_reaching_outside(signups))
 
+# TODO: print count_long_bookings(signups, 4) underneath for comparison
+print(count_long_bookings(signups, 4))
 # ===== Step 4: Pass the Last Member In and Out, Then Trigger an UnboundLocalError =====
 # The coordinator wants each sign-up printed next to the one before it. The
 # top half is yours to write. The bottom half is written for you, and is
@@ -232,15 +242,21 @@ sessions_cutoff = 2
 # traceback, answer below, then put a # in front of the line that raises so
 # the steps after it can run.
 
-def log_signup(record, previous_member):
-    # TODO: pull the member name out of `record`
+def log_signup(records, previous_member):
+    previous_member = records.split(",")[0]
     # TODO: print the previous member and this one on one line
+    print(previous_member)
     # TODO: return this member's name
+    return previous_member
     pass
 
 last_member = "nobody yet"
 # TODO: call log_signup on signups[0], then on signups[1], storing
 # what it returns back into last_member each time
+last_member = log_signup(signups[0], last_member)
+last_member = log_signup(signups[1], last_member)
+
+
 
 last_seen = "nobody yet"
 
