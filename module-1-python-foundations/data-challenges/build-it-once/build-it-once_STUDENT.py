@@ -317,16 +317,27 @@ log_signup_broken(signups[2])
 # Three function names. Everything else is yours.
 
 def sessions_in(record):
-    pass
+    return int(record.split(",")[2])
 
 def signups_for(records, member):
-    pass
+    results = []
+    for record in records: 
+         if record.split(",")[0] == member:
+              results += [record]
+    return results
 
 def total_for(records, member):
-    # This one should get its work done by calling the other two.
-    pass
+     total = 0
+     for record in signups_for(records, member):
+          total += sessions_in(record)
+     return total
 
-# TODO: print a line per member
+print("Nia", total_for(signups, "Nia"))
+print("Omar", total_for(signups, "Omar"))
+print("Tess", total_for(signups, "Tess"))
+print("Rafi", total_for(signups, "Rafi"))
+print("Gwen", total_for(signups, "Gwen"))
+
 
 # ===== Step 6: Run total_for() on Five Inputs Nobody Asked For, Then Judge Each Answer =====
 # No new functions. Call the ones you already have on inputs nobody asked
@@ -350,12 +361,22 @@ def total_for(records, member):
 
 # No new functions. Call the ones you already have, on inputs nobody
 # asked for, and write a verdict beside each printed result.
+print(total_for([], "Nia"))
+# Right
+print(total_for(["Nia,Yoga,4"], "Nia"))
+# Right
+print(total_for(signups, "Jamie"))
+# Just a number that didnt crash
+print(total_for(signups, "nia"))
+# Just a number that didnt crash
+print(signups_for([], "Nia"))
+# Right
 
-# TODO: an empty list
-# TODO: a list holding exactly one record
-# TODO: a member name that is not in the file at all
-# TODO: a name that differs from a real member's only by capitalization
-# TODO: then: do the per-member totals add up to the whole-file total?
+grand_total = 0
+for member in ["Nia", "Omar", "Tess", "Rafi", "Gwen"]:
+    grand_total += total_for(signups, member)
+
+print("sum of members:", grand_total, "whole file:", total_sessions(signups))
 
 # ----- Share Out: Day 3 -----
 # Last 15 minutes, back together as a class. Bring:
