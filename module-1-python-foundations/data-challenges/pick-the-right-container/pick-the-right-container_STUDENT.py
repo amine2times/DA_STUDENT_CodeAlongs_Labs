@@ -3,7 +3,7 @@
 
 import json
 
-DATA_FILE = "station_taps.csv"  # edit the filepath with the data
+DATA_FILE = "module-1-python-foundations/data-challenges/data/station_taps.csv"  # edit the filepath with the data
 
 with open(DATA_FILE) as f:
     rows = [line.split(",") for line in f.read().splitlines() if line]
@@ -17,9 +17,14 @@ taps = rows[1:]
 # Step 1: Write `scan_for()` and Count Its Comparisons for Three Tap IDs
 def scan_for(tap_id, records):
     # TODO: assign `comparisons` to 0
+    comparisons = 0
     # TODO: loop over `records`; add 1 to `comparisons` for every row
+    for record in records:
+        comparisons +=  1
     # TODO: inside the loop, return `comparisons` when row[0] == tap_id
+        if tap_id == record[0]:
     # TODO: after the loop, return `comparisons`
+            return comparisons
     pass
 
 
@@ -35,16 +40,25 @@ print("comparisons to find T999:", scan_for("T999", taps))
 #
 
 
+
 # Step 2: Print Scan Cost at 5 to 40 Rows, Then Count a Nested Pair Loop
 for size in [5, 10, 20, 40]:
     worst = scan_for("T999", taps[:size])
     # TODO: print "rows:", `size`, "| worst-case comparisons:", `worst`
+    print("rows:", size, "worst-case comparisons:", worst ) 
 # TODO: assign `pairs` to 0; loop over `taps` with a loop over `taps` inside
-# TODO: add 1 to `pairs` in the inner loop
-# TODO: print len(taps) and `pairs`
-# TODO: assign `big` to len(taps) * 10
-# TODO: print the scan's worst case and the pair loop's count on `big` rows
+pairs = 0
+for tap in taps:
 
+    
+# TODO: add 1 to `pairs` in the inner loop
+    pairs += 1
+# TODO: print len(taps) and `pairs`
+    print(len(taps), pairs)
+# TODO: assign `big` to len(taps) * 10
+    big = len(taps) * 10
+# TODO: print the scan's worst case and the pair loop's count on `big` rows
+    
 # Step 2, answer 1:
 #
 # Step 2, answer 2:

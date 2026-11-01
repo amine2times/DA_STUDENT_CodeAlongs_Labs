@@ -5,6 +5,8 @@
 # Write two restock reminders to a file called notes.txt, one per line.
 print('----- 1. Writing to a File -----')
 # TODO: use a `with` block and open("notes.txt", "w")
+#with open("notes.txt", "w") as f:
+
 # TODO: write "Restock staplers" and "Restock printer paper"
 # TODO: end each line with "\n"
 
@@ -41,14 +43,23 @@ print('----- 4. Serializing a Record With json.dump() -----')
 # TODO: use "Stapler", 12 and "Office"
 # TODO: open "supply.json" in write mode; save the dict with json.dump()
 
+import json
+supply = {"Stapler": 12, "department":"office", "name": "stapler"}
+
+with open("supply.json", "w") as f:
+    json.dump(supply, f)
+    
 
 # ===== 5. Deserializing It Back With json.load() =====
 # Load supply.json back into Python and check that it is a real dict again.
 print('----- 5. Deserializing It Back With json.load() -----')
 # TODO: import json
 # TODO: open "supply.json"; read it into supply with json.load()
+with open("supply.json", "r") as f:
+    supply = json.load(f)
 # TODO: print supply["name"], then print type(supply)
-
+print(supply["name"])
 # PREDICT before you run: Dump a tuple to JSON and load it back. What type?
 # Your answer:
-#
+print(type(supply))
+
