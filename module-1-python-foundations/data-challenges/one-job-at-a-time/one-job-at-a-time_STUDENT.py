@@ -3,7 +3,7 @@
 
 import json
 
-DATA_FILE = "pantry_donations.csv"  # edit the filepath with the data
+DATA_FILE = "module-1-python-foundations/data-challenges/data/pantry_donations.csv"  # edit the filepath with the data
 
 
 # ===== Day 1 =====
