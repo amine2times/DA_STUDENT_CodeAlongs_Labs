@@ -46,7 +46,17 @@ print('----- 2. Step 1: Add __str__ -----')
 # TODO: add __str__(self) that returns
 # f"{self.title}, {self.players_available} left"
 
+class BoardGame:
+    def __init__(self, title, players_available,
+                 category):
+        self.title = title
+        self.players_available = players_available
+        self.category = category
+    def __str__(self):
+        return(f"{self.title}, {self.players_available} left")
 
+connect4 = BoardGame("Connect Four", 4, "Strategy")
+print(connect4)
 # TODO: create connect4 again, then print(connect4)
 
 # DISCUSS: The Step 1 code never calls __str__ by name. So why did
@@ -62,7 +72,20 @@ print('----- 2. Step 1: Add __str__ -----')
 print('----- 3. Step 2: Add __repr__ Too -----')
 # TODO: keep __init__ and __str__ from Step 1
 # TODO: add __repr__(self) that returns f"BoardGame('{self.title}')"
+class BoardGame:
+    def __init__(self, title, players_available,
+                 category):
+        self.title = title
+        self.players_available = players_available
+        self.category = category
+    def __str__(self):
+        return(f"{self.title}, {self.players_available} left")
+    def __repr__(self):
+        return f"BoardGame('{self.title})"
+        pass 
 
+connect4 = BoardGame("Connect Four", 4, "Strategy")
+print(connect4)
 
 # ===== 4. Now Test repr() =====
 # This asks Python for the exact version of one game instead of the friendly
