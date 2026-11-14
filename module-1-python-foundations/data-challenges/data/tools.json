@@ -1,0 +1,302 @@
+[
+    {
+        "tool_id": "TL-001",
+        "tool_name": "Rubber Mallet",
+        "borrowed": true,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-002",
+        "tool_name": "Utility Knife",
+        "borrowed": true,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-003",
+        "tool_name": "Claw Hammer",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-004",
+        "tool_name": "Laser Level",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-005",
+        "tool_name": "Pipe Wrench",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-006",
+        "tool_name": "Pipe Wrench",
+        "borrowed": true,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-007",
+        "tool_name": "Utility Knife",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-008",
+        "tool_name": "Adjustable Wrench",
+        "borrowed": true,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-009",
+        "tool_name": "Claw Hammer",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-010",
+        "tool_name": "Pipe Wrench",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-011",
+        "tool_name": "Rubber Mallet",
+        "borrowed": true,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-012",
+        "tool_name": "Socket Set",
+        "borrowed": true,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-013",
+        "tool_name": "Pipe Wrench",
+        "borrowed": true,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-014",
+        "tool_name": "Cordless Drill",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-015",
+        "tool_name": "Claw Hammer",
+        "borrowed": true,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-016",
+        "tool_name": "Tape Measure",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-017",
+        "tool_name": "Tape Measure",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-018",
+        "tool_name": "Cordless Drill",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-019",
+        "tool_name": "Circular Saw",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-020",
+        "tool_name": "Cordless Drill",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-021",
+        "tool_name": "Circular Saw",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-022",
+        "tool_name": "Hex Key Set",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-023",
+        "tool_name": "Adjustable Wrench",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-024",
+        "tool_name": "Claw Hammer",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-025",
+        "tool_name": "Cordless Drill",
+        "borrowed": true,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-026",
+        "tool_name": "Torque Wrench",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-027",
+        "tool_name": "Laser Level",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-028",
+        "tool_name": "Spirit Level",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-029",
+        "tool_name": "Torque Wrench",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-030",
+        "tool_name": "Hex Key Set",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-031",
+        "tool_name": "Tape Measure",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-032",
+        "tool_name": "Spirit Level",
+        "borrowed": true,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-033",
+        "tool_name": "Rubber Mallet",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-034",
+        "tool_name": "Circular Saw",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-035",
+        "tool_name": "Cordless Drill",
+        "borrowed": true,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-036",
+        "tool_name": "Adjustable Wrench",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-037",
+        "tool_name": "Tape Measure",
+        "borrowed": true,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-038",
+        "tool_name": "Socket Set",
+        "borrowed": true,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-039",
+        "tool_name": "Hex Key Set",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-040",
+        "tool_name": "Laser Level",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-041",
+        "tool_name": "Wire Stripper",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-042",
+        "tool_name": "Spirit Level",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-043",
+        "tool_name": "Adjustable Wrench",
+        "borrowed": false,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-044",
+        "tool_name": "Torque Wrench",
+        "borrowed": true,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-045",
+        "tool_name": "Tape Measure",
+        "borrowed": true,
+        "inspected": false
+    },
+    {
+        "tool_id": "TL-046",
+        "tool_name": "Wire Stripper",
+        "borrowed": true,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-047",
+        "tool_name": "Socket Set",
+        "borrowed": true,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-048",
+        "tool_name": "Wire Stripper",
+        "borrowed": false,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-049",
+        "tool_name": "Socket Set",
+        "borrowed": true,
+        "inspected": true
+    },
+    {
+        "tool_id": "TL-050",
+        "tool_name": "Utility Knife",
+        "borrowed": true,
+        "inspected": true
+    }
+]

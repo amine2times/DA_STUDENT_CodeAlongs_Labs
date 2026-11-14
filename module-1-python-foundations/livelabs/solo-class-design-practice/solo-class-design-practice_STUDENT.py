@@ -47,15 +47,57 @@ SUBMIT
 # names and your method can all differ from everyone else's and still be
 # right. The test is whether each one traces back to the stakeholder
 # paragraph.
-
+import json
+DATA_FILE = ("/Users/amineamine/Documents/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/data/tools.json")
+tools_list = []
+with open(DATA_FILE, "r") as file:
+    tools_list = json.load(file) 
 # TODO: Write __init__ and a Method, From Scratch
+
+
+class checkedAmount:
+    def __init__(self, tool_name):
+        self.tool_name = tool_name
+        self.total_amount = 0
+        self.borrowed_amount = 0
+        self.needs_inspection_amount = 0
+        self.amount_avail = 0
+        for record in tools_list:
+            if record["tool_name"] == self.tool_name:
+                print(record)
+                self.total_amount += 1
+                if record["borrowed"] == True:
+                    self.borrowed_amount += 1
+                if record["inspected"] == False:
+                    self.needs_inspection_amount += 1
+                if record["borrowed"] == True or record["inspected"] == False:
+                    self.amount_avail += 1
+
+
+
+        
+
+ 
+
 
 # ===== Step 4: Instantiate 2+ Objects, Confirm Independent Storage =====
 # The same proof Day 13's lecture asked for, now on a class you designed
 # yourself. Predict what each print() will show before you run it.
 
 # TODO: Instantiate 2+ Objects, Confirm Independent Storage
+drill = checkedAmount("Claw Hammer")
+print(drill.total_amount)
+print(drill.borrowed_amount)
+print(drill.needs_inspection_amount)
+print(drill.amount_avail)
 
+
+
+drill = checkedAmount("Pipe Wrench")
+print(drill.total_amount)
+print(drill.borrowed_amount)
+print(drill.needs_inspection_amount)
+print(drill.amount_avail)
 # ===== Step 5: Justify Your Design Choice in 2-3 Sentences =====
 
 # Your answer:
