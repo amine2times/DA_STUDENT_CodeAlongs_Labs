@@ -184,7 +184,7 @@ with open("tap_summary.json", "w") as file:
 
 with open("tap_summary.json") as file:
     reloaded = json.load(file)
-reloaded = None
+#reloaded = None
 
 print("total_taps came back as:", reloaded["total_taps"])
 print("taps_by_card came back as a", type(reloaded["taps_by_card"]).__name__)
