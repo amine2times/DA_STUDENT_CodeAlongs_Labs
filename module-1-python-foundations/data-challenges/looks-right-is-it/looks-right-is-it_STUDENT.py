@@ -1,7 +1,7 @@
 #!/usr/bin/env python3
 """Looks Right. Is It?: see DataChallengeOverview&Steps.md for the steps."""
 
-DATA_FILE = "timesheet_hours.csv"  # edit the filepath with the data
+DATA_FILE = "/Users/amineamine/Documents/DA_STUDENT_CodeAlongs_Labs/module-1-python-foundations/data-challenges/data/timesheet_hours.csv"  # edit the filepath with the data
 
 with open(DATA_FILE) as f:
     lines = f.read().splitlines()
@@ -30,6 +30,11 @@ def weekly_hours(lines, emp_id):
 
 
 print("Rosa Alvarez, weekly hours:", weekly_hours(lines, "E101"))
+
+
+
+
+
 
 # Step 1, answer 1:
 #
