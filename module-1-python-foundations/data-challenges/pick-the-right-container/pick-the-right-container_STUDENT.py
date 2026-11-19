@@ -76,6 +76,23 @@ for tap in taps:
 # TODO: if card_ids[i] == card, add 1 to tap_counts[i], set found, break
 # TODO: after the inner loop, if not found, append `card` and 1 to the lists
 
+card_ids = []
+tap_counts = []
+comparisons = 0
+for tap in taps:
+    card = tap[1]
+    found = False
+    for i in range(len(card_ids)):
+        comparisons += 1
+        if card_ids[i] == card:
+            tap_counts[i] += 1
+            found = True
+            break
+    if found == False:
+        card_ids.append(card)
+        tap_counts.append(1)
+        
+
 busiest = tap_counts.index(max(tap_counts))
 print("distinct cards:", len(card_ids))
 print("comparisons the two parallel lists needed:", comparisons)
@@ -95,6 +112,23 @@ print("busiest card:", card_ids[busiest], "with", max(tap_counts), "taps")
 # TODO: assign `stations` to set(); loop over `taps` and .add() row[2]
 # TODO: assign `repeat_riders` to 0
 # TODO: loop over `taps_by_card`; add 1 to `repeat_riders` if a count is > 1
+
+taps_by_card = {}
+lookups = 0
+for row in taps:
+    lookups += 1
+    taps_by_card[row[1]] = taps_by_card.get(row[1], 0) + 1
+
+stations = set()
+
+for row in taps:
+    stations.add(row[2])
+
+repeat_riders = 0
+
+for card_id in taps_by_card:
+    if taps_by_card[card_id] > 1:
+        repeat_riders += 1
 
 print("distinct cards:", len(taps_by_card))
 print("lookups the dictionary needed:", lookups)
@@ -118,17 +152,17 @@ print("taps for C001:", taps_by_card["C001"])
 # TODO: replace each None with your Day 2 value; keep `stations` a set
 summary = {
     "service_day": "2026-03-02",
-    "total_taps": None,
-    "distinct_cards": None,
-    "stations": None,
-    "taps_by_card": None,
+    "total_taps": len(taps),
+    "distinct_cards": len(taps_by_card),
+    "stations": stations,
+    "taps_by_card": taps_by_card,
 }
 
 print("about to serialize", len(summary), "keys")
 # TODO: run the file and answer below before you change anything
 # TODO: then put # in front of the next two lines so Step 6 can run
-text = json.dumps(summary, indent=2)
-print(text)
+#text = json.dumps(summary, indent=2)
+#`print(text)
 
 # Step 5, answer 1:
 #
@@ -142,6 +176,14 @@ print(text)
 # TODO: assign summary["stations"] to a type JSON can hold; keep the key
 # TODO: json.dump() `summary` into a with open("tap_summary.json", "w")
 # TODO: replace None with json.load() of "tap_summary.json"
+
+summary["stations"] = sorted(summary["stations"])
+
+with open("tap_summary.json", "w") as file:
+    json.dump(summary, file, indent=2)
+
+with open("tap_summary.json") as file:
+    reloaded = json.load(file)
 reloaded = None
 
 print("total_taps came back as:", reloaded["total_taps"])
