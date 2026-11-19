@@ -25,7 +25,7 @@ def weekly_hours(lines, emp_id):
     for row in lines[1:]:
         parts = row.split(",")
         if parts[0] == emp_id:
-            total = add_hours(total, parts[2])
+            total = add_hours(total, int(parts[3]))
     return total
 
 
@@ -58,7 +58,13 @@ def days_worked(lines, emp_id):
     return days
 
 
-staff = ["E101", "E102", "E103", "E106", "E105"]
+
+staff = []
+for each in lines[1:]:
+    emp_id = each.split(",")[0]
+    if emp_id not in staff:
+        staff.append(emp_id)
+print(staff)
 for emp_id in staff:
     hours = weekly_hours(lines, emp_id)
     days = days_worked(lines, emp_id)
@@ -76,7 +82,7 @@ for emp_id in staff:
 # ===== Day 2 =====
 
 # Step 3: Find Why Four of the Five Weekly Hour Totals Are Wrong
-# TODO: add up Rosa's (E101) and Mei's (E103) hours by hand first
+# TODO: add up Rosa's (E101) *40* and Mei's (E103) *32* hours by hand first
 # TODO: print("starting", emp, "total is", total) first in the outer loop
 # TODO: move the line that sets `total` inside the outer loop
 # TODO: delete the "starting" print once all five totals are right
@@ -86,19 +92,22 @@ for row in lines[1:]:
     records.append({"id": emp_id, "name": name, "day": day,
                     "hours": int(hours), "rate": float(rate)})
 
+
 employee_ids = []
 for r in records:
     if r["id"] not in employee_ids:
         employee_ids.append(r["id"])
 
-total = 0
+
 for emp in employee_ids:
+    total = 0
     name = ""
     for r in records:
         if r["id"] == emp:
             name = r["name"]
             total = total + r["hours"]
     print(emp, name, "| weekly hours:", total)
+
 
 # Step 3, answer 1:
 #
@@ -109,12 +118,16 @@ for emp in employee_ids:
 
 
 # Step 4: Fix Two Overtime Bugs That Overpay the Firm by $1,810 a Week
-# TODO: work out Rosa's, Darnell's and Mei's pay by hand first
+# TODO: work out Rosa's *960*, Darnell's *1543.50* and Mei's *896* pay by hand first
 # TODO: fix weekly_pay() so it follows the handbook rule word for word
 # TODO: fix the other line that compares `total` against 40 the same way
 def weekly_pay(hours, rate):
-    if hours >= 40:
-        return hours * rate * 1.5
+    if hours > 40:
+        ot_hours = hours - 40
+        ot_rate = rate * 1.5
+        ot_pay = ot_hours * ot_rate
+        reg_pay = 40 * rate
+        return reg_pay + ot_pay
     return hours * rate
 
 
@@ -129,7 +142,7 @@ for emp in employee_ids:
             name = r["name"]
             rate = r["rate"]
             total = total + r["hours"]
-    if total >= 40:
+    if total > 40:
         owed_overtime = owed_overtime + 1
     pay = weekly_pay(total, rate)
     payroll = payroll + pay
