@@ -165,6 +165,7 @@ print("VERDICT:", verdict)
 # is 4 comparisons versus 1, a non-member is 312 versus 1, and the
 # whole morning is 2924 versus 332 (about 8.8 times).
 
+
 # Step 4, answer 2:
 # The claim says to include the dictionary's build cost. The build cost
 # was 312 steps, so the whole-morning dictionary total was 332, not 20.

@@ -37,12 +37,18 @@ print("Rosa Alvarez, weekly hours:", weekly_hours(lines, "E101"))
 
 
 # Step 1, answer 1:
-#
-# Step 1, answer 2:
-#
-# Step 1, answer 3:
-#
+# Rosa worked 40 hours: 8 + 8 + 8 + 8 + 8 = 40.
 
+# Step 1, answer 2:
+# - The last traceback line tells me the exception type and error message.
+# - Each block above it shows the function call and line that led to it.
+# - I read the traceback from the bottom upward to trace the bad value back.
+# I used the Python documentation about Errors and Exceptions.
+
+# Step 1, answer 3:
+# The traceback ended in add_hours() at the line that adds total + hours.
+# The actual bug was in weekly_hours(): it read parts[2], the day value
+# like "Mon", instead of the hours column, parts[3], converted to int.
 
 # Step 2: Trace the ZeroDivisionError Back to the Hand-Typed Staff List
 # TODO: run the file as given; note the last ID that printed
@@ -72,11 +78,14 @@ for emp_id in staff:
           "| average per day:", hours / days)
 
 # Step 2, answer 1:
-#
+# There are 5 employees in the CSV.
+
 # Step 2, answer 2:
-#
+# Five employee lines printed before the crash. It stopped on E106.
+
 # Step 2, answer 3:
-#
+# The bug was above the division line: the hand-typed staff list included
+# E106, which is not in the CSV, so days_worked returned 0.
 
 
 # ===== Day 2 =====
@@ -110,11 +119,17 @@ for emp in employee_ids:
 
 
 # Step 3, answer 1:
-#
+# Rosa worked 40 hours and Mei worked 32 hours.
+
 # Step 3, answer 2:
-#
+# Before the fix, total started at 0 for E101, then 40 for E102, 86 for
+# E103, 118 for E104, and 156 for E105. The line total = 0 was outside
+# the outer loop, so it ran only once instead of once per employee.
+
 # Step 3, answer 3:
-#
+# Rosa's number was right because she was counted first, when total was 0.
+# Priya's total became the whole staff's weekly hours because every earlier
+# employee's hours were still stored in total.
 
 
 # Step 4: Fix Two Overtime Bugs That Overpay the Firm by $1,810 a Week
@@ -151,9 +166,19 @@ for emp in employee_ids:
 print("employees owed overtime:", owed_overtime)
 print(f"TOTAL PAYROLL: ${payroll:,.2f}")
 
+
 # Step 4, answer 1:
-#
+# Rosa: 40 * $24.00 = $960.00.
+# Darnell: (40 * $31.50) + (6 * $47.25) = $1,543.50.
+# Mei: 32 * $28.00 = $896.00.
+
 # Step 4, answer 2:
-#
+# The first bug was in weekly_pay(): it paid all hours at 1.5 times the
+# rate for an overtime week. I changed it so only hours over 40 get 1.5x,
+# while the first 40 hours stay at the regular rate.
+# The second bug was the overtime counter using >= 40. I changed it to > 40.
+
 # Step 4, answer 3:
-#
+# Only Rosa's exactly-40-hour week catches the >= versus > bug. Both
+# conditions behave the same for weeks below 40 or above 40 hours, but
+# they differ when the total is exactly 40.
