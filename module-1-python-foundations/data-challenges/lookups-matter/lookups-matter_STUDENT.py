@@ -31,7 +31,7 @@ print("found:", row["name"], "at", row["home_branch"])
 print("comparisons:", count)
 
 # Step 1, answer 1:
-#
+# 300
 
 
 # Step 2: Total the Comparisons for All 20 Swipes in `door_checkins.txt`
@@ -63,9 +63,11 @@ print("swipes:", len(swipes), "| not members:", not_members)
 print("linear total comparisons:", linear_total)
 
 # Step 2, answer 1:
-#
+# There are 20 swipes. I do notice that I spot a duplicate of M1004.
 # Step 2, answer 2:
-#
+# M1004: 4, M1012: 12, M1027: 27
+# Sum: 43
+# A non-member costs 312 comparisons.
 
 
 # Step 3: Build `members_by_id` and Find the Swipe Where It Pays Off
@@ -111,11 +113,19 @@ print("dict pays off at swipe:", pays_off_at)
 print("morning totals | linear:", linear_running, "| dict:", dict_running)
 
 # Step 3, answer 1:
-#
+# I predict the dictionary pays off at swipe 6, M1313. After swipe 5,
+# linear is 262 and dictionary is 317; after swipe 6, linear is 574
+# and dictionary is 318.
+
 # Step 3, answer 2:
-#
+# A dictionary keyed on member_id fits the door's job because it looks
+# up IDs repeatedly. It has a one-time build cost, then each lookup is
+# O(1) average-case. It first pulled ahead at swipe 6.
+
 # Step 3, answer 3:
-#
+# A plain list is better for a very short morning with only a few
+# swipes. For example, after the first five swipes, linear costs 262
+# comparisons while the dictionary costs 317 including its build cost.
 
 
 # Step 4: Test an AI Speed Claim Against Your Totals and Write a Verdict
@@ -150,6 +160,11 @@ verdict = "It looks like the dictionary look up was way faster as in some cases 
 print("VERDICT:", verdict)
 
 # Step 4, answer 1:
-#
+# The claim matched the idea that dictionary lookup is faster for
+# repeated searches, but there is no one fixed speedup. The first swipe
+# is 4 comparisons versus 1, a non-member is 312 versus 1, and the
+# whole morning is 2924 versus 332 (about 8.8 times).
+
 # Step 4, answer 2:
-#
+# The claim says to include the dictionary's build cost. The build cost
+# was 312 steps, so the whole-morning dictionary total was 332, not 20.
